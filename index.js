@@ -47,7 +47,7 @@ exports.contactTrace = async (req, res) => {
     if (traceUserId) {
         const attendanceSheet = doc.sheetsByTitle["attendances"];
 
-        const currentTimestampAsString = new Intl.DateTimeFormat('en-PH', { dateStyle: 'medium', timeStyle: 'medium' }).format(new Date())
+        const currentTimestampAsString = new Intl.DateTimeFormat('en-PH', { dateStyle: 'medium', timeStyle: 'medium', timeZon: 'Asia/Manila' }).format(new Date())
         
         const row = await attendanceSheet.addRow([
             currentTimestampAsString, traceUserId, 'entry', 'valid'
